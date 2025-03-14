@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import UploadButton from '@/components/UploadButton';
+import AdminUploadButton from '@/components/AdminUploadButton';
 
 const Index = () => {
   const [featuredMemes, setFeaturedMemes] = useState<Meme[]>([]);
@@ -52,6 +53,7 @@ const Index = () => {
             Trending Memes
           </h2>
           <div className="flex items-center gap-4">
+            <AdminUploadButton />
             <UploadButton />
             <Link 
               to="/trending"
