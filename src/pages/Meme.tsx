@@ -5,6 +5,7 @@ import { Meme as MemeType, getMemeById } from '@/data/memes';
 import Header from '@/components/Header';
 import MemeView from '@/components/MemeView';
 import Footer from '@/components/Footer';
+import UploadButton from '@/components/UploadButton';
 
 const Meme = () => {
   const { memeId } = useParams<{ memeId: string }>();
@@ -49,7 +50,12 @@ const Meme = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <MemeView meme={meme} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="flex justify-end mb-6">
+          <UploadButton defaultCategory={meme.category} />
+        </div>
+        <MemeView meme={meme} />
+      </div>
       <Footer />
     </div>
   );

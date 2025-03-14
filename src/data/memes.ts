@@ -212,3 +212,22 @@ export const getRandomMeme = (): Meme => {
 export const getAllCategories = (): Category[] => {
   return Object.keys(categoryInfo) as Category[];
 };
+
+// New function to handle meme submissions (client-side mock)
+let nextId = memes.length + 1;
+
+export const submitMeme = (meme: Omit<Meme, 'id' | 'likes' | 'comments' | 'date'>) => {
+  const newMeme: Meme = {
+    id: String(nextId++),
+    likes: 0,
+    comments: 0,
+    date: new Date().toISOString().split('T')[0],
+    ...meme
+  };
+  
+  // In a real application, this would send data to a server
+  // For now, we'll just log it to the console
+  console.log('Submitted meme:', newMeme);
+  
+  return newMeme;
+};
