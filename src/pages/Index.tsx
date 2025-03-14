@@ -8,6 +8,7 @@ import CategoryPill from '@/components/CategoryPill';
 import Footer from '@/components/Footer';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import UploadButton from '@/components/UploadButton';
 
 const Index = () => {
   const [featuredMemes, setFeaturedMemes] = useState<Meme[]>([]);
@@ -50,13 +51,16 @@ const Index = () => {
           <h2 className="text-3xl font-bold font-serif">
             Trending Memes
           </h2>
-          <Link 
-            to="/trending"
-            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <span>See all</span>
-            <ChevronRight size={16} />
-          </Link>
+          <div className="flex items-center gap-4">
+            <UploadButton />
+            <Link 
+              to="/trending"
+              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <span>See all</span>
+              <ChevronRight size={16} />
+            </Link>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
