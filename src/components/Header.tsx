@@ -36,7 +36,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link 
-            to="/" 
+            to="/home" 
             className="flex items-center gap-2"
           >
             <span className="text-2xl font-bold font-serif bg-gradient-to-r from-primary to-science bg-clip-text text-transparent">
